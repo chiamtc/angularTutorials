@@ -15,6 +15,46 @@ app.directive("myDirective", function(){
 	};
 });
 
+/** table header order by name or country with click
+app.controller("myCtrl",function($scope){
+	$scope.names = [
+        {name:'Jani',country:'Norway'},
+        {name:'Carl',country:'Sweden'},
+        {name:'Margareth',country:'England'},
+        {name:'Hege',country:'Norway'},
+        {name:'Joe',country:'Denmark'},
+        {name:'Gustav',country:'Sweden'},
+        {name:'Birgit',country:'Denmark'},
+        {name:'Mary',country:'England'},
+        {name:'Kai',country:'Norway'}
+        ];
+		
+	$scope.tableOrder = function(orderType){
+		$scope.headerOrder = orderType;
+		
+	}
+});
+**/
+
+
+/** filter from user keyword
+app.controller("myCtrl",function($scope){
+	$scope.names = [
+        {name:'Jani',country:'Norway'},
+        {name:'Carl',country:'Sweden'},
+        {name:'Margareth',country:'England'},
+        {name:'Hege',country:'Norway'},
+        {name:'Joe',country:'Denmark'},
+        {name:'Gustav',country:'Sweden'},
+        {name:'Birgit',country:'Denmark'},
+        {name:'Mary',country:'England'},
+        {name:'Kai',country:'Norway'}
+        ];
+	
+});
+
+**/
+
 
 /** basic filtering with orderBy
 app.controller("myCtrl", function($scope){
