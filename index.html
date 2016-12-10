@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+
+<!-- basic filtering with orderBy
+<ul>
+	<li ng-repeat="x in names | orderBy: 'name'">
+	{{x.name + " is from " + x.country}}
+
+	</li>
+</ul>
+-->
+
+<!---------------------------------------------------------------------------->
+<!-- Capturing user input, live display with basic filter
+First Name : <input ng-model = "usrFirstName">
+<br>
+Last Name : <input ng-model = "usrLastName">
+
+
+<p> First Name - {{usrFirstName | uppercase}} </p> 
+<p> Last Name - {{usrLastName | lowercase}} </p>
+<hr>
+<p> Full Name ( {{fullName()}} ) </p>
+
+-->
+
+<!---------------------------------------------------------------------------->
+<!-- Conversion 
+Value in Decimal: <input ng-model="usrInput">
+<button ng-click = "convert()"> Convert </button>
+<p> Value in Hex: {{ answer }} </p>
+<p> Value in Binary: {{ answer2 }} </p>
+-->
+
+<!---------------------------------------------------------------------------->
+<!-- myForm.myAddress.$error etc... = w3schools, model part 
+<form ng-app="" name="myForm">
+<input name="myAddress" type="email" ng-model="text">
+<span ng-show="myForm.myAddress.$error.email">soethign wrong</span>
+</form>
+--> 
+</div>
+
+
+<script src="myModule.js"></script>
+<script src="myController.js"></script>
+</body>
+</html>
