@@ -6,14 +6,75 @@ app.directive("keen", function(){
 	};
 });
 
-
-
 app.directive("myDirective", function(){
 	return{
 		template:"another directive?",
 		restrict:"E"
 	};
 });
+
+/** using http service with server
+	-skeelton $http().then();
+	-other services in $http()
+	.delete()
+	.get()
+	.head()
+	.jsonp()
+	.patch()
+	.post()
+	.put()
+	-response properties 
+	.config the object used to generate the request.
+	.data a string, or an object, carrying the response from the server.
+	.headers a function to use to get header information.
+	.status a number defining the HTTP status.
+	.statusText a string defining the HTTP status.
+	
+app.controller("myCtrl", function($scope, $http){
+	$http({
+		method:"get",
+		url:"jsonstuffs.php"
+	}).then(
+		function success(response){
+			$scope.names = response.data.records;
+		},
+		function error(response){
+			$scope.kappa = "Kappa";
+		}
+	);
+});//end controller
+**/
+
+/** creating and using service in angularjs like wcf 
+app.service("arithmetic", function(){
+	this.plus = function(x,y){
+		return x+y;
+	}
+	
+	this.minus = function(x,y){
+		return x-y;
+	}
+	
+});
+app.controller("myCtrl", function($scope, arithmetic){
+	$scope.calculate = function(){
+		var a = parseInt($scope.txt1);
+		var b = parseInt($scope.txt2);
+		switch($scope.operation){
+			case 'plus':
+				$scope.answer = arithmetic.plus(a,b);
+			break;
+			case 'minus':
+				$scope.answer = arithmetic.minus(a,b);
+			break;
+			default:
+				$scope.answer = "something wrong";
+			break;
+		}
+		
+	}
+});
+**/
 
 /** table header order by name or country with click
 app.controller("myCtrl",function($scope){
