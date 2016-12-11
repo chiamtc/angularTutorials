@@ -1,17 +1,55 @@
-app.directive("keen", function(){
+/** testing directives 
+	partOfJournal in controller but
+	part-of-Journal in model
+**/
+app.directive("keenThings", function(){
 	return{
-		template:" is hand ",
+		template:"first directive",
 		restrict:"E"
-		
 	};
 });
 
-app.directive("myDirective", function(){
+app.directive("partOfJournal", function(){
 	return{
-		template:"another directive?",
-		restrict:"E"
+		//templateUrl to link from another page to current one,
+		templateUrl:"anotherTest.html"
 	};
 });
+
+app.controller("myCtrl",function($scope){
+	$scope.hiddent = false;
+	$scope.showSomething = function(){
+		$scope.hiddent = !$scope.hiddent;
+	}
+});
+/** pop up to show more
+app.controller("myCtrl", function($scope){
+	$scope.hiddenStuffs = false;
+	$scope.myFunc = function(){
+		$scope.hiddenStuffs = !$scope.hiddenStuffs;
+	}
+});
+
+**/
+
+
+
+/** ng-options, read it thru
+app.controller("myCtrl", function($scope, $http){
+	$http({
+		method: "get",
+		url:"jsonstuffs.php"
+	}).then(
+		function success(response){
+			$scope.nameList = response.data.records;
+		},
+		function error(response){
+			$scope.nameList = "nothing";
+		}
+	);
+	
+});
+**/
 
 /** using http service with server
 	-skeelton $http().then();
@@ -43,7 +81,7 @@ app.controller("myCtrl", function($scope, $http){
 		}
 	);
 });//end controller
-**/
+
 
 /** creating and using service in angularjs like wcf 
 app.service("arithmetic", function(){

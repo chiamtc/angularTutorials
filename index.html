@@ -4,11 +4,66 @@
 <body>
 
 <div ng-app="myApp" ng-controller="myCtrl">
+<button ng-click="showSomething()">show it</button>
+<div ng-show="hiddent">
+<keen-things></keen-things>
+<part-of-journal></part-of-journal>
+</div>
+<!-- pop up to show more 
+	ng-show determines by boolean which handled in controller
+<button ng-click="myFunc()">show something </button>
+
+<div ng-show="hiddenStuffs">
+	<h1>Menu:</h1>
+    <div>Pizza</div>
+    <div>Pasta</div>
+    <div>Pesce</div>
+</div>
+-->
+
+
+<!-- 
+	other directives:
+		ng-disabled = make dom element disabled
+		ng-show = make dom element shows/hides(based on value or not)
+		<div ng-app="" ng-init="hour=12">
+			<p ng-show="hour > 13"> HEY </p>
+		</div>
+		ng-hide = make dom element hides/shows
+
+-->
+<!-- ng-options, read it thru 
+	nameList from controller, then bind it to model with different name,
+	unlike ng-repeats, str8 away using controller to bind on model and view 
+	
+	Style 1: find ppl by country on first on the list (not recommended)
+
+<select ng-model="kk" ng-options="x.Country for x in nameList"></select>
+From
+<p>Name: {{kk.Name}}</p>
+<p>City: {{kk.City}}</p>
+	
+	Style 2: find where is this ppl comes from (country and city)
+	
+<select ng-model="kk" ng-options="x.Name for x in nameList"></select>
+From
+<p>Country: {{kk.Country}}</p>
+<p>City: {{kk.City}}</p>
+
+	Style 3: x,y is the key, value pair and use value instead of key, else it will be undefined
+	
+<select ng-model="kk" ng-options="y.Name for (x,y) in nameList"></select>
+From
+<p>Country: {{kk.Country}}</p>
+<p>City: {{kk.City}}</p>
+
+-->
+
 
 <!-- using http service with server 
-	
 <table border="1">	
 	<tr ng-repeat="x in names">
+		<td> {{$index+1}}</td>
 		<td>{{x.Name}}</td>
 		<td>{{x.Country}}</td>
 	</tr>
