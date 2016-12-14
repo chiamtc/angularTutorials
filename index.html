@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
-<script src="angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 <body>
+<!-- short to-do application
+<div ng-app="todoApp" ng-controller="todoCtrl">
+Enter task: <input ng-model="todoEntry">
+<button ng-click="addTask()">Add Task </button>
+<table>
+<tr ng-repeat="x in tasks">
+<td>
+<input type="checkbox" ng-model="x.done">{{x.task}} 
+</td>
+</tr>
+</table>
+<button ng-click="removeTask()">Remove checked tasks</button>
+</div>
 
+-->
+
+
+<!-- routing 
 <div ng-app="myApp" ng-controller="myCtrl">
+<p><a href="#/">Main</a></p>
+
+<a href="#red">red</a>
+<a href="#anotherTest">to another pagE</a>
+<div ng-view></div>
+-->
+
+<!-- button clicks to show/hide directive
 <button ng-click="showSomething()">show it</button>
 <div ng-show="hiddent">
 <keen-things></keen-things>
 <part-of-journal></part-of-journal>
 </div>
+
+--> 
+
 <!-- pop up to show more 
 	ng-show determines by boolean which handled in controller
 <button ng-click="myFunc()">show something </button>

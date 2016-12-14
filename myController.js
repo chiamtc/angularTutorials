@@ -1,10 +1,51 @@
-/** testing directives 
+/** short to-do application
+app.controller("todoCtrl", function($scope){
+	$scope.tasks = [{task:"Clean house", done:false}, {task:"Cook lunch", done:false}];
+	$scope.addTask = function(){
+		$scope.tasks.push({task:$scope.todoEntry, done:false});
+	};
+	
+	$scope.removeTask = function(){
+		var oldTasks = $scope.tasks
+		$scope.tasks = [];
+
+		angular.forEach(oldTasks,function(x){
+			if(!x.done){ 
+			$scope.tasks.push(x);
+			}
+		});
+	};
+	
+});
+
+**/
+
+
+/** routing
+app.config(function($routeProvider){
+	$routeProvider
+	.when('/',{
+		template: "<h1>LUL</h1>"
+	})
+	.when('/red',{
+		templateUrl: 'red.html'
+		
+	})
+	.when('/anotherTest',{
+		templateUrl: 'anotherTest.html'
+	});
+});
+
+**/
+
+
+/** button clicks to show/hide directive
+	testing directives 
 	partOfJournal in controller but
 	part-of-Journal in model
-**/
+
 app.directive("keenThings", function(){
-	return{
-		template:"first directive",
+	return{ 
 		restrict:"E"
 	};
 });
@@ -22,6 +63,9 @@ app.controller("myCtrl",function($scope){
 		$scope.hiddent = !$scope.hiddent;
 	}
 });
+**/
+
+
 /** pop up to show more
 app.controller("myCtrl", function($scope){
 	$scope.hiddenStuffs = false;
@@ -31,8 +75,6 @@ app.controller("myCtrl", function($scope){
 });
 
 **/
-
-
 
 /** ng-options, read it thru
 app.controller("myCtrl", function($scope, $http){
@@ -134,6 +176,7 @@ app.controller("myCtrl",function($scope){
 	}
 });
 **/
+
 
 
 /** filter from user keyword
