@@ -2,7 +2,36 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<head>
+<style>
+div.calendar{
+	box-shadow: 1px 6px 10px 5px rgba(0,0,0,0.2);
+	text-align:center;
+	width:250px;
+}
+
+div.header{
+	background-color: #4CAF50;
+	color:white;
+	font-size:40px;
+	padding:10px;
+}
+
+div.container{
+	padding:10px;
+}
+</style>
+</head>
 <body>
+
+<div class="calendar">
+	<div class="header">
+	<h1>1</h1>
+	</div>
+	<div class="container">
+	<p>1st Jan , 2016</p>
+	</div>
+</div>
 <!-- short to-do application
 <div ng-app="todoApp" ng-controller="todoCtrl">
 Enter task: <input ng-model="todoEntry">
