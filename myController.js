@@ -1,3 +1,34 @@
+
+/** factory vs service with Dependency Injection on controller
+app.factory("factorySomething",function(){
+	return{
+		sayHello: function(){
+			return "Hello from factory";
+		},
+		sayGoodbye: function(){
+			return "goodbye";
+		}
+	}
+});
+
+app.service("serviceSomething",function(){
+	this.sayHello = function(){
+		return "hello- from serivece";
+	};
+	
+	this.sayGoodbye = function(){
+		return "goodbye from sevice";
+	};
+});
+
+app.controller("myCtrl", ['$scope', 'serviceSomething', 'factorySomething' , function($scope, serviceSomething, factorySomething){
+	$scope.greetingsS = serviceSomething.sayHello();
+	$scope.greetingsF = factorySomething.sayHello();
+}]);
+**/
+
+
+
 /** short to-do application
 app.controller("todoCtrl", function($scope){
 	$scope.tasks = [{task:"Clean house", done:false}, {task:"Cook lunch", done:false}];
@@ -56,6 +87,7 @@ app.directive("partOfJournal", function(){
 		templateUrl:"anotherTest.html"
 	};
 });
+
 
 app.controller("myCtrl",function($scope){
 	$scope.hiddent = false;
