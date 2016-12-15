@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<head>
+<style>
+div.calendar{
+	box-shadow: 1px 6px 10px 5px rgba(0,0,0,0.2);
+	text-align:center;
+	width:250px;
+}
+
+div.header{
+	background-color: #4CAF50;
+	color:white;
+	font-size:40px;
+	padding:10px;
+}
+
+div.container{
+	padding:10px;
+}
+</style>
+</head>
+<body>
+
+<!-- factory vs service with dependency injection on controller -->
+<div ng-app="myApp" ng-controller="myCtrl">
+	<p>{{greetingsS}}</p><p>{{greetingsF}}</p>
+</div>

@@ -1,5 +1,5 @@
 
-/** factory vs service with Dependency Injection on controller
+/** factory vs service with Dependency Injection on controller**/
 app.factory("factorySomething",function(){
 	return{
 		sayHello: function(){
@@ -25,7 +25,7 @@ app.controller("myCtrl", ['$scope', 'serviceSomething', 'factorySomething' , fun
 	$scope.greetingsS = serviceSomething.sayHello();
 	$scope.greetingsF = factorySomething.sayHello();
 }]);
-**/
+
 
 
 
