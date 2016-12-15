@@ -2,10 +2,8 @@
 angular.module("mySub", []);
 angular.module("myApp", ['mySub', 'ngRoute'])
 
-.config(['$routeProvider', function ($routeProvider) {
-
+.config(['$routeProvider' , function ($routeProvider) {
     $routeProvider
-       
         .when('/', {
             templateUrl: 'dank/main.html'
         })
@@ -13,7 +11,6 @@ angular.module("myApp", ['mySub', 'ngRoute'])
 		.when('/pages',{
 			controller: 'myCtrl',
 			templateUrl:'dank/pages.html'
-		})
+		});
 		
-		.otherwise({ redirectTo:'/' });
 }])
